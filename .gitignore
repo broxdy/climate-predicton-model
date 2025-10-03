@@ -1,0 +1,59 @@
+# R and RStudio
+.Rhistory
+.RData
+.Rproj.user
+*.Rproj
+.Rapp.history
+
+# Session Data files
+.RData
+.rda
+.rds
+
+# R Environment Variables
+.Renviron
+
+# Temporary files
+*~
+*.bak
+*.tmp
+*.swp
+
+# Output directories (generated results)
+downscaling_results/
+output/
+results/
+V[0-9]*/
+*__ML-Predict/
+
+# Large data files (users should obtain these separately)
+# Uncomment if you want to exclude large input data:
+# *.nc
+# *.ncdf
+# input/
+
+# OS specific
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE and development
+.vscode/
+.idea/
+.claude/
+
+# Internal documentation (not for public repo)
+CLAUDE.md
+CLEANUP-PLAN.md
+progress.txt
+
+# Logs
+*.log
+
+# System files
+*.swp
+*~
+
+# Package archives
+*.tar.gz
+*.zip
