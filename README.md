@@ -1,15 +1,15 @@
 # Short- and Long-Term Climate Prediction : R Scripts from Computational Research
 
-[![Research Period](https://img.shields.io/badge/Research%20Period-2006--2015-blue)]()
+[![Research Period](https://img.shields.io/badge/Research%20Period-2009--2015-blue)]()
 [![Language](https://img.shields.io/badge/Language-R-276DC3)]()
 [![Domain](https://img.shields.io/badge/Domain-Numerical%20Modeling-green)]()
 [![License](https://img.shields.io/badge/License-See%20LICENSE-lightgrey)]()
 
 > **Research Archive:** Computational framework implementing numerical and statistical methods for short-term (monthly to seasonal) and long-term (decadal to century-scale) climate prediction, with applications to water resource management and hydrological impact assessment.
 
-<img width="906" height="1273" alt="image" src="https://github.com/user-attachments/assets/a6f04ad9-6792-49ae-99ea-448daea49dde" />
+<img width="838" height="881" alt="image" src="https://github.com/user-attachments/assets/616fef50-c801-438a-95c0-da51c251fe72" />
 
-*Changes of projected precipitation for future periods 2000-2049 (left panels) and 2000-2096 (right panels) under IPCC SRES A1B (a), A2 (b) and B1 (c)*
+*Spatial distributions of 10-year average annual precipitation of 24 stations at the end of the 20th-century (1990-1999) (a), and at the end of the 21st-century (years 2080-2089), under SRES A1B (b), A2 (c) and B1 (d)*
 
 ---
 
@@ -18,21 +18,27 @@
 This repository contains the complete **numerical modeling framework** developed as part of doctoral dissertation research on climate prediction methodologies. The research addresses two temporal scales of climate prediction:
 
 ### Short-Term Climate Prediction (Monthly to Seasonal)
-**Time Horizons:** 1-month to 1-year ahead forecasts
-**Purpose:** Operational water management and reservoir operation guidelines
-**Applications:** Next-season temperature and rainfall forecasting for immediate water resource planning
+- **Time Horizons:** 1-month to 1-year ahead forecasts
+- **Purpose:** Operational water management and reservoir operation guidelines
+- **Applications:** Next-season temperature and rainfall forecasting for immediate water resource planning
 
 ### Long-Term Climate Prediction (Decadal to Century-Scale)
-**Time Horizons:** Inter-annual and decadal variations through 21st century (2000-2099)
-**Purpose:** Pre-warning information for future climate change and hydrological impacts
-**Applications:** Strategic water supply planning and adaptation strategy development
+- **Time Horizons:** Inter-annual and decadal variations through 21st century (2000-2099)
+- **Purpose:** Pre-warning information for future climate change and hydrological impacts
+- **Applications:** Strategic water supply planning and adaptation strategy development
 
 ### Research Motivation and Study Area
 
-**Study Region:** Khlong Yai (KY) watershed, Eastern Seaboard of Thailand
-**Regional Significance:** Major industrial zone experiencing severe drought and water shortage
-**Research Objective:** Analyze potential climate change impacts on water supply for industrial development
-**Hydrological Application:** Multi-realization streamflow simulation and reservoir water budget analysis using SWAT distributed watershed model
+- **Study Region:** Khlong Yai (KY) watershed, Eastern Seaboard of Thailand
+- **Regional Significance:** Major industrial zone experiencing severe drought and water shortage
+- **Research Objective:** Analyze potential climate change impacts on water supply for industrial development
+- **Hydrological Application:** Multi-realization streamflow simulation and reservoir water budget analysis using SWAT distributed watershed model
+
+
+<img width="906" height="1273" alt="image" src="https://github.com/user-attachments/assets/a6f04ad9-6792-49ae-99ea-448daea49dde" />
+
+*Changes of projected precipitation for future periods 2000-2049 (left panels) and 2000-2096 (right panels) under IPCC SRES A1B (a), A2 (b) and B1 (c)*
+
 
 ### Key Research Contributions
 
@@ -71,9 +77,9 @@ This repository contains the complete **numerical modeling framework** developed
 
 ### Target Users
 
-**Primary:** Water resource planners, hydrological modelers, climate impact researchers
-**Secondary:** Numerical modelers, computational scientists, applied mathematicians
-**Applications:** Climate prediction, water supply planning, reservoir operation, drought management
+- **Primary:** Water resource planners, hydrological modelers, climate impact researchers
+- **Secondary:** Numerical modelers, computational scientists, applied mathematicians
+- **Applications:** Climate prediction, water supply planning, reservoir operation, drought management
 
 ---
 
@@ -144,7 +150,7 @@ This repository contains the complete **numerical modeling framework** developed
 └── README.md                         # This file
 ```
 
-**Note:** This is a **doctoral dissertation research archive** from 2006-2015. A major cleanup in October 2025 reduced the repository from 136,750 files (including ~129,000 generated outputs from downscaling experiments and hydrological simulations) to 1,655 essential files (98.8% reduction), retaining only source code and input data for reproducibility.
+**Note:** This is a **doctoral dissertation research archive** from 2009-2015. A major cleanup in October 2025 reduced the repository from 136,750 files (including ~129,000 generated outputs from downscaling experiments and hydrological simulations) to 1,655 essential files (98.8% reduction), retaining only source code and input data for reproducibility.
 
 ---
 
@@ -631,7 +637,7 @@ When referencing this **computational framework** in publications:
 This repository represents **academic research code** developed during doctoral and post-doctoral studies. While shared for reproducibility and educational purposes, users should:
 
 1. **Cite original work** when using methods or code
-2. **Acknowledge limitations** of historical codebase (2006-2015)
+2. **Acknowledge limitations** of historical codebase (2009-2015)
 3. **Validate results** before operational use
 4. **Contact maintainer** for collaboration on derivative work
 
@@ -662,7 +668,7 @@ This is a **research archive**, but contributions are welcome in these areas:
 ### Contact
 
 **Repository Maintainer:** Werapol Bureekul
-**Research Period:** 2006-2015 (Doctoral/Post-doctoral research in Numerical Modeling)
+**Research Period:** 2009-2015 (Doctoral/Post-doctoral research in Numerical Modeling)
 **Research Focus:** Computational climate prediction, numerical algorithms, time series analysis
 
 **Issues:** Use GitHub Issues for technical questions, bugs, or numerical method discussions
@@ -685,7 +691,7 @@ This is a **research archive**, but contributions are welcome in these areas:
 - [Institution] High-Performance Computing facility
 
 **Academic Advisors:**
-- Doctoral and post-doctoral supervisors (2006-2015)
+- Doctoral and post-doctoral supervisors (2009-2015)
 - Collaborators in numerical modeling and computational climate science
 
 **Repository Cleanup:**
@@ -705,5 +711,5 @@ This is a **research archive**, but contributions are welcome in these areas:
 ---
 
 **Last Updated:** October 3, 2025
-**Repository Status:** Active research archive (2006-2015 methods)
+**Repository Status:** Active research archive (2009 -2015 methods)
 **Maintenance:** Community-driven with original author oversight
