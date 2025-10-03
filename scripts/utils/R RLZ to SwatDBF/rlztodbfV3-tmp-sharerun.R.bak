@@ -1,0 +1,91 @@
+library(foreign)
+#dir_name = "tmp1971-2008v3"
+#rlz.n = 30
+#rlz.f = "conclude temp all-rlz all-sta.csv"
+
+maindir = "temp/accessory/R RLZ to SwatDBF"
+
+
+tmpsta = read.table("tmp4sta.csv", stringsAsFactors=FALSE,header=TRUE, sep=",",dec=".",na.strings="-")
+tmpsta.n = nrow(tmpsta)
+
+# Define rainy day by stochasitc rainfall prediction
+#rlz.f = "conclude rain all-rlz all-sta1971-2096.csv"
+#rlz.f = "conclude rain all-rlz all-sta1971-2008.csv"
+
+
+
+dir0=dirname(file.path("D:",paste(maindir),"dummy"))
+
+rlz.data =  read.table(rlz.f, stringsAsFactors=FALSE,header=TRUE, sep=",",dec=".",na.strings="-")
+rlz.row.n = nrow(rlz.data)
+rlz.col.n = ncol(rlz.data)
+
+#all.date = paste(rlz.data[,2],"/",rlz.data[,3],"/",rlz.data[,1],sep="")
+
+#first.date = paste(rlz.data[1,2],"/",rlz.data[1,3],"/",rlz.data[1,1],sep="")
+first.date = as.Date(paste(rlz.data[1,2],"/",rlz.data[1,3],"/",rlz.data[1,1],sep=""),"%m/%d/%Y")
+all.date = first.date+ 0:(rlz.row.n-1)
+
+
+#first.date = as.Date(0, origin=first.date)
+
+
+
+
+
+sta.n = tmpsta.n  # remove date column
+
+#####
+## Main loop for each realization
+for(rlz.i in 1:rlz.n){
+
+# Check working directory
+dir_name1 = paste(dir_name,"rlz",rlz.i,sep="")
+
+L=file.exists(dir_name1)  
+if(!L) dirfile=dir.create(dir_name1)
+dirfile=(dir_name1)
+dir1=dirname(file.path("D:",paste(maindir),paste(dirfile),"dummy"))
+
+cat("\n-RLZ :",rlz.i)
+
+####
+## Loop for each station
+for(sta.i in 1:sta.n){
+col.i = c(3+(sta.i-1)*rlz.n*2+rlz.i,3+(sta.i-1)*rlz.n*2+rlz.n+rlz.i)
+cat("\n Col.",col.i)
+
+title.name = sub(paste(".",rlz.i,sep=""),"",colnames(rlz.data)[col.i],fixed=TRUE)
+file.name = tmpsta[sta.i,2]
+cat("\n  ",colnames(rlz.data)[col.i]," - ",file.name," rlz :",rlz.i)
+
+rlz.out = cbind(all.date,format(round(rlz.data[col.i],digits = 3), scientific = FALSE,digits = 3))
+colnames(rlz.out) = c("Date","MAX","MIN")
+
+
+setwd(dir1)
+write.dbf(rlz.out, file = file.name)
+setwd(dir0)
+}
+####
+## END Loop for each station
+
+
+## Create weather staion database file
+setwd(dir1)
+write.dbf(tmpsta, file = "indtmp")
+setwd(dir0)
+
+}
+#####
+## END Main loop for each realization
+cat("\nEND script")
+
+
+
+
+
+
+
+

@@ -1,0 +1,110 @@
+library(foreign)
+#dir_name = "sharerun "
+#rlz.n = 30
+#rlz.f.pcp = "conclude rain all-rlz all-sta1971-2008.csv"
+
+
+#rlz.n = 1
+
+cat("\nReading station file")
+#met.f = "pcp24sta.csv"
+sta.f = "pcpec12v2.csv"
+pcpsta = read.table(sta.f, stringsAsFactors=FALSE,header=TRUE, sep=",",dec=".",na.strings="-")
+sta.n = nrow(pcpsta)
+sta.choose = read.table("PCPsta.txt", stringsAsFactors=FALSE,header=TRUE, sep=",",dec=".",na.strings="-")
+
+cat("\nReading ratio file")
+ratio.f = "ThiessenRatio.csv"
+ratio.table = read.table(ratio.f, stringsAsFactors=FALSE,header=TRUE, sep=",",dec=".",na.strings="-")
+
+
+maindir = "temp/accessory/R RLZ to SwatDBF"
+#dir_name = "pcp1971-2096"
+
+dir0=dirname(file.path("D:",paste(maindir),"dummy"))
+
+# Define rainy day by stochasitc rainfall prediction
+#rlz.f = "conclude rain all-rlz all-sta1971-2096.csv"
+#rlz.f = "DailyPCP1971-2006.csv"
+
+
+rlz.data =  read.table(rlz.f.pcp, stringsAsFactors=FALSE,header=TRUE, sep=",",dec=".",na.strings="-")
+rlz.row.n = nrow(rlz.data)
+rlz.col.n = ncol(rlz.data)
+
+#all.date = paste(rlz.data[,2],"/",rlz.data[,3],"/",rlz.data[,1],sep="")
+
+#first.date = paste(rlz.data[1,2],"/",rlz.data[1,3],"/",rlz.data[1,1],sep="")
+first.date = as.Date(paste(rlz.data[1,2],"/",rlz.data[1,3],"/",rlz.data[1,1],sep=""),"%m/%d/%Y")
+all.date = first.date+ 0:(rlz.row.n-1)
+
+
+#first.date = as.Date(0, origin=first.date)
+
+
+
+
+#sta.n = (rlz.col.n-3)/rlz.n # remove date column
+
+#####
+## Main loop for each realization
+for(rlz.i in 1:rlz.n){
+
+# Check working directory
+dir_name1 = paste(dir_name,"rlz",rlz.i,sep="")
+
+L=file.exists(dir_name1)  
+if(!L) dirfile=dir.create(dir_name1)
+dirfile=(dir_name1)
+dir1=dirname(file.path("D:",paste(maindir),paste(dirfile),"dummy"))
+
+cat("\n Writing rlz:",rlz.i)
+####
+## Loop for each station
+for(sta.i in 1:sta.n){
+sta.title = pcpsta[sta.i,2]
+sel.obs = which(ratio.table[sta.i,-1] > 0)+1
+cat("\n  ",sta.title,"\n")
+
+sum.pcp = 0
+for(obs.i in 1:length(sel.obs)){
+sel.i = which(sta.choose == colnames(ratio.table)[sel.obs[obs.i]])
+sum.pcp = sum.pcp + rlz.data[,3+(sel.i-1)*rlz.n + rlz.i]*ratio.table[sta.i,sel.obs[obs.i]]
+cat(" ",colnames(rlz.data)[3+(sel.i-1)*rlz.n + rlz.i])
+}
+sum.pcp.df = as.data.frame(sum.pcp)
+#col.i = 3+(sta.i-1)*rlz.n+rlz.i
+#t.name = sub(paste(".",rlz.i,sep=""),"",colnames(rlz.data)[col.i],fixed=TRUE)
+#cat("\n",t.name)
+
+
+#rlz.out = cbind(all.date,format(round(rlz.data[col.i],digits = 1), scientific = FALSE,digits = 1))
+rlz.out = cbind(all.date,format(round(sum.pcp.df,digits = 1), scientific = FALSE,digits = 1))
+
+colnames(rlz.out) = c("Date","PCP")
+
+setwd(dir1)
+write.dbf(rlz.out, file = sta.title)
+setwd(dir0)
+}
+####
+## END Loop for each station
+
+
+## Create weather staion database file
+setwd(dir1)
+write.dbf(pcpsta, file = "indpcp")
+setwd(dir0)
+
+}
+#####
+## END Main loop for each realization
+cat("\nEND script")
+
+
+
+
+
+
+
+

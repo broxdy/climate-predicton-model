@@ -1,0 +1,16 @@
+dir_name = "OBS1971-1999 SCNA1B 2000-2096 "
+rlz.n = 30
+
+rlz.f.pcp = "PCP OBS1971-1999 SCNA1B 2000-2096.csv"
+source("rlztodbfV3-pcp-sharerun.R")
+
+rlz.f = "TMP OBS1971-1999 SCNA1B 2000-2096.csv"
+source("rlztodbfV3-tmp-sharerun.R")
+
+rlz.f = "HMD OBS1971-1999 SCNA1B 2000-2096.csv"
+source("rlztodbfV3-hmd-sharerun.R")
+
+rlz.f = "SLR OBS1971-1999 SCNA1B 2000-2096.csv"
+source("rlztodbfV3-slr-sharerun.R")
+
+cat("\nEND share run script")
