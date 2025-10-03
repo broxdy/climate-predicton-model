@@ -1,11 +1,15 @@
-# Numerical Methods for Short- and Long-Term Climate Prediction : R Scripts from Computational Research
+# Short- and Long-Term Climate Prediction : R Scripts from Computational Research
 
 [![Research Period](https://img.shields.io/badge/Research%20Period-2006--2015-blue)]()
 [![Language](https://img.shields.io/badge/Language-R-276DC3)]()
 [![Domain](https://img.shields.io/badge/Domain-Numerical%20Modeling-green)]()
 [![License](https://img.shields.io/badge/License-See%20LICENSE-lightgrey)]()
 
-> **Doctoral Dissertation Research Archive:** Computational framework implementing numerical and statistical methods for short-term (monthly to seasonal) and long-term (decadal to century-scale) climate prediction, with applications to water resource management and hydrological impact assessment.
+> **Research Archive:** Computational framework implementing numerical and statistical methods for short-term (monthly to seasonal) and long-term (decadal to century-scale) climate prediction, with applications to water resource management and hydrological impact assessment.
+
+<img width="906" height="1273" alt="image" src="https://github.com/user-attachments/assets/a6f04ad9-6792-49ae-99ea-448daea49dde" />
+
+*Changes of projected precipitation for future periods 2000-2049 (left panels) and 2000-2096 (right panels) under IPCC SRES A1B (a), A2 (b) and B1 (c)*
 
 ---
 
@@ -213,6 +217,10 @@ This repository implements a **four-stage computational framework** for climate 
 
 **Mathematical Output:** Correlation matrices R(τ), spectral density functions S(f), autocorrelation coefficients ρ(k)
 
+<img width="927" height="1008" alt="image" src="https://github.com/user-attachments/assets/1dd0659c-15c4-4b95-bab5-cbc5cc1653c7" />
+
+*Average cross-correlation coefficients between 58 daily ECHO-G GCM predictors and observed daily maximum and minimum temperatures and precipitation for all recording climate stations in the study region for years 1971-2000*
+
 ### Stage 2: Time Series Modeling and Transfer Function Estimation
 
 **Modules:** `01-arima-forecasting`, `02-multi-regression-downscaling`, `03-ml-multiGCM-regression`
@@ -222,6 +230,11 @@ This repository implements a **four-stage computational framework** for climate 
 - **Parameter estimation:** Maximum likelihood estimation (MLE) via Newton-Raphson iteration
 - **Forecasting:** Multi-step ahead prediction using recursive substitution
 - **Forecast horizons:** h = 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33 months
+
+<img width="945" height="1184" alt="image" src="https://github.com/user-attachments/assets/80972b85-3a9e-450a-b037-2461efae3067" />
+
+*ARIMAex-model forecasts with ocean indices as external regressors to predict monthly a) max and b) min temperatures and c) rainfall at station 48459 in years 1986 to 1999 following the vrf1- calibration/verification scheme*
+
 
 **Numerical Method B - Multiple Linear Regression:**
 - **Least squares estimation:** Normal equations solution (X'X)⁻¹X'y
@@ -237,6 +250,11 @@ This repository implements a **four-stage computational framework** for climate 
 
 **Mathematical Output:** Transfer functions Y = f(X,β) + ε, coefficient vectors β, forecast sequences Ŷ(t+h)
 
+<img width="855" height="1003" alt="image" src="https://github.com/user-attachments/assets/790da161-9b28-4804-8402-63a35bd28aeb" />
+
+*Scatterplots of the observed and predicted values of a) minimum, b) maximum temperatures at station 48478 and c) precipitation at station 48092 in years 1986-1999, using the MLR- model and employing the single-domain HiRes GCM (left panels) and the multi-model GCMs+HiRes (right panels) large-scale predictor sets*
+
+
 ### Stage 3: Future Scenario Projection and Uncertainty Quantification
 
 **Module:** `03-ml-multiGCM-regression` (future scenario applications)
@@ -248,6 +266,10 @@ This repository implements a **four-stage computational framework** for climate 
 - **Change detection:** Anomaly computation δT = T_future - T_baseline for 2046-2065 and 2081-2100 periods
 
 **Mathematical Output:** Ensemble projections Y_ens(t), confidence intervals CI(t), trend coefficients β_trend
+
+<img width="895" height="1214" alt="image" src="https://github.com/user-attachments/assets/263570fa-c32f-4ba5-aff0-2d92ce053987" />
+
+*Monthly averages of projected 4-site minimum and maximum temperatures (top) and 24-site precipitation (bottom) over years 1971-1999 (20c3m) and future years 2000-2096 under the SRES-scenarios A1B, A2 and B1, using the multi-domain MLR-downscaling method*
 
 ### Stage 4: Stochastic Disaggregation and Spatial Field Generation
 
@@ -263,6 +285,10 @@ This repository implements a **four-stage computational framework** for climate 
 
 **Mathematical Output:** N realizations of spatially correlated daily sequences {X_s(t)}_{s=1..S,t=1..T,n=1..N}
 
+<img width="916" height="749" alt="image" src="https://github.com/user-attachments/assets/e940c261-ed25-430b-aabd-e9cdc8c9f23d" />
+
+*Comparison of the simulated daily Moran’s I climate time-series using single-site (left panel) and multi-site (right panel) stochastic climate generation*
+
 ### Numerical Validation
 
 **Implemented Tests:**
@@ -271,6 +297,10 @@ This repository implements a **four-stage computational framework** for climate 
 - **Distribution tests:** Kolmogorov-Smirnov, Anderson-Darling goodness-of-fit
 - **Extremes validation:** Return period comparison, extreme value index matching
 - **Spatial coherence:** Moran's I preservation test, variogram analysis
+
+<img width="868" height="609" alt="image" src="https://github.com/user-attachments/assets/bf9c26e9-84e8-4452-a9cd-f0a7c9efbef4" />
+
+*Kernel density estimation of daily maximum temperature at station 48478 for years 1971-2000 using the downscaling models as indicated (cross points) and the daily observation (dashed line)*
 
 ---
 
@@ -496,6 +526,11 @@ Some analyses require outputs from earlier steps:
 3. **Downscaling** (Modules 01-03) → Monthly projections
 4. **Stochastic generation** (Module 04) → Daily realizations
 5. **Post-processing** (utils/) → Visualizations, format conversion
+
+<img width="911" height="503" alt="image" src="https://github.com/user-attachments/assets/3bc67b8e-5f40-4347-b61b-4ea9a19f6b48" />
+
+*1981-2006 observed and reconstructed time series of maximum and minimum temperature at station 48478 for calibration period 1981-1993 and verification period 1994-2006*
+
 
 ### Legacy R Compatibility
 
