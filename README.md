@@ -1,15 +1,31 @@
 # Short- and Long-Term Climate Prediction : R Scripts from Computational Research
 
-[![Research Period](https://img.shields.io/badge/Research%20Period-2009--2015-blue)]()
+[![Research Period](https://img.shields.io/badge/Research%20Period-2009--2014-blue)]()
 [![Language](https://img.shields.io/badge/Language-R-276DC3)]()
 [![Domain](https://img.shields.io/badge/Domain-Numerical%20Modeling-green)]()
 [![License](https://img.shields.io/badge/License-See%20LICENSE-lightgrey)]()
 
 > **Research Archive:** Computational framework implementing numerical and statistical methods for short-term (monthly to seasonal) and long-term (decadal to century-scale) climate prediction, with applications to water resource management and hydrological impact assessment.
 
+**Climate Prediction Framework** transforms global climate model outputs into local-scale predictions using validated statistical downscaling methods. This doctoral research archive (2009-2014) contains 276 R scripts implementing:
+- 1. multi-GCM ensemble regression for century-scale projections
+- 2. ARIMA models with SST teleconnections for seasonal forecasting
+- 3. Moran's I spatial autocorrelation for daily weather generation.
+Applied to Thailand's water resources, the framework demonstrated superior accuracy over SDSM/LARS-WG and informed IPCC scenario impacts on reservoir operations - [full methodology published 2015](https://kobra.uni-kassel.de/items/7d4c1f26-0029-4fe4-b6bb-e32d46963974).
+
+
 <img width="838" height="881" alt="image" src="https://github.com/user-attachments/assets/616fef50-c801-438a-95c0-da51c251fe72" />
 
 *Spatial distributions of 10-year average annual precipitation of 24 stations at the end of the 20th-century (1990-1999) (a), and at the end of the 21st-century (years 2080-2089), under SRES A1B (b), A2 (c) and B1 (d)*
+
+---
+
+## Research Context
+
+- **Repository Maintainer:** Werapol Bejranonda
+- **Research Period:** 2009-2014 (Doctoral/Post-doctoral research in Numerical Modeling)
+- **Research Focus:** Computational climate prediction, numerical algorithms, time series analysis
+- **Repository Cleanup:** October 2025 - Repository reorganization, documentation enhancement, and preparation for public release
 
 ---
 
@@ -150,7 +166,7 @@ This repository contains the complete **numerical modeling framework** developed
 └── README.md                         # This file
 ```
 
-**Note:** This is a **doctoral dissertation research archive** from 2009-2015. A major cleanup in October 2025 reduced the repository from 136,750 files (including ~129,000 generated outputs from downscaling experiments and hydrological simulations) to 1,655 essential files (98.8% reduction), retaining only source code and input data for reproducibility.
+**Note:** This is a **doctoral dissertation research archive** from 2009-2014. A major cleanup in October 2025 reduced the repository from 136,750 files (including ~129,000 generated outputs from downscaling experiments and hydrological simulations) to 1,655 essential files (98.8% reduction), retaining only source code and input data for reproducibility.
 
 ---
 
@@ -590,7 +606,7 @@ Some analyses require outputs from earlier steps:
 
 ### External Publications
 
-**Original research outputs** (2009-2015):
+**Original research outputs** (2009-2014):
 - Doctoral dissertation and journal articles
 - Conference presentations
 - Technical reports
@@ -603,30 +619,49 @@ Some analyses require outputs from earlier steps:
 
 If you use these numerical methods or code in your research, please cite:
 
+**Doctoral Dissertation (2015):**
+```
+Bejranonda, W. (2015). "The prediction of seasonal and inter-annual climate variations
+and their impacts on the water resources in the eastern seaboard of Thailand".
+Dissertation. University of Kassel, Kassel, Germany.
+https://kobra.uni-kassel.de/items/7d4c1f26-0029-4fe4-b6bb-e32d46963974
+```
+
+**BibTeX:**
 ```bibtex
-@software{bureekul_climate_prediction_2015,
-  author = {Bureekul, Werapol},
-  title = {Numerical Methods for Climate Prediction and Downscaling},
+@phdthesis{bejranonda2015prediction,
+  author = {Bejranonda, Werapol},
+  title = {The prediction of seasonal and inter-annual climate variations and their impacts on the water resources in the eastern seaboard of Thailand},
+  school = {University of Kassel},
   year = {2015},
-  publisher = {GitHub},
-  url = {https://github.com/bwerapol/climate-prediction},
-  note = {Computational framework for regional climate prediction (2006-2015)}
+  address = {Kassel, Germany},
+  url = {https://kobra.uni-kassel.de/items/7d4c1f26-0029-4fe4-b6bb-e32d46963974}
 }
 ```
 
-**Additionally cite relevant publications:**
-- Doctoral dissertation on numerical climate modeling methods
-- Journal articles on multi-GCM ensemble techniques
-- Conference papers on stochastic weather generation algorithms
-- Technical reports on teleconnection pattern analysis
+### Other Relevant Publications
 
-*(Contact repository maintainer for complete publication list)*
+**2015:**
+- Bejranonda, W. and Koch, M. (2015). "Predictions of long-term Climate Variations and of their Impacts on the Water Resources in the Eastern Seaboard of Thailand". International Conference on Water Resources, Coastal and Ocean Engineering (ICWRCOE'15), NITK Surathkal, Mangalore, India, March 12-14, 2015.
+
+**2014:**
+- Bejranonda, W. and Koch, M. (2014). "Application of multi-site stochastic daily climate generation to assess the impact of climate change in the eastern seaboard of Thailand". 11th International Conference on Hydroscience & Engineering, ICHE 2014, Hamburg, Germany, September 28 - October 2, 2014. ISBN: 978-3-939230-32-8
+
+**2013:**
+- Bejranonda, W. and Koch, M. (2013). "Using teleconnections from the Pacific and Indian oceans for short-range climate prediction in the eastern seaboard of Thailand". 6th International Conference on Water Resources and Environment Research, ICWRER 2013, Koblenz, Germany, June 3-7, 2013. DOI: 10.5675/ICWRER_2013.
+
+**2010:**
+- Bejranonda, W. and Koch, M. (2010). "Optimal Selection of Multi-Model Downscaled Ensembles for Interannual and Seasonal Climate Prediction in the Eastern Seaboard of Thailand". Abstract H51A-0874, 2010 AGU Fall Meeting, San Francisco, December 13-17, 2010.
+- Bejranonda, W. and Koch, M. (2010). "The Role of Ocean State Indices in the seasonal and inter-annual Climate Variability of Thailand". Journal of Western Rajabhat Universities 5(1), pp. 5–23.
+- Bejranonda W., Koch, M. and Koontanakulvong, S. (2010). "Long-range Prediction of climatic Change in the Eastern Seaboard of Thailand over the 21st Century using various Downscaling Approaches". European Geosciences Union General Assembly 2010, Vienna, Austria, May 2-7, 2010.
+- Bejranonda W. and Koch, M. (2010). "Spatial and temporal Teleconnections of Sea Surface Temperature and Ocean Indices to regional Climate Variations across Thailand - a Pathway to understanding the Impact of Climate Change on Water Resources". European Geosciences Union General Assembly 2010, Vienna, Austria, May 2-7, 2010.
+- Bejranonda W. and Koch, M. (2010). "Estimating Future Potential Of Khlong Yai Reservoir Using Downscaling Approaches: An Assessment Of Climate Change Impact On Water Supply". The 2nd Regional Conference on Global Environment, Ho Chi Minh City, Vietnam, March 8-9, 2010.
 
 ### Acknowledging This Archive
 
 When referencing this **computational framework** in publications:
 
-> "Numerical methods adapted from Bureekul (2015), computational framework for regional climate prediction developed 2006-2015, implementing ARIMA forecasting, multi-GCM ensemble downscaling, and Moran's I-based stochastic generation algorithms. Available: https://github.com/bwerapol/climate-prediction"
+> "Numerical methods adapted from Bejranonda (2015), computational framework for regional climate prediction developed 2009-2014, implementing ARIMA forecasting, multi-GCM ensemble downscaling, and Moran's I-based stochastic generation algorithms. Available: https://github.com/bwerapol/climate-prediction"
 
 ---
 
@@ -637,7 +672,7 @@ When referencing this **computational framework** in publications:
 This repository represents **academic research code** developed during doctoral and post-doctoral studies. While shared for reproducibility and educational purposes, users should:
 
 1. **Cite original work** when using methods or code
-2. **Acknowledge limitations** of historical codebase (2009-2015)
+2. **Acknowledge limitations** of historical codebase (2009-2014)
 3. **Validate results** before operational use
 4. **Contact maintainer** for collaboration on derivative work
 
@@ -665,51 +700,30 @@ This is a **research archive**, but contributions are welcome in these areas:
 4. **Test thoroughly:** Ensure reproducibility
 5. **Submit pull request:** Describe changes and motivation
 
-### Contact
-
-**Repository Maintainer:** Werapol Bureekul
-**Research Period:** 2009-2015 (Doctoral/Post-doctoral research in Numerical Modeling)
-**Research Focus:** Computational climate prediction, numerical algorithms, time series analysis
-
-**Issues:** Use GitHub Issues for technical questions, bugs, or numerical method discussions
-**Collaborations:** Contact via GitHub for research collaboration on computational climate modeling
-
 ---
 
 ## Acknowledgments
 
-**Funding Sources:**
-- [Grant/Fellowship 1]
-- [Grant/Fellowship 2]
+**Funding Sources:** University of Kassel
 
 **Data Providers:**
 - Thai Meteorological Department (observational data)
 - IPCC Data Distribution Centre (GCM scenarios)
 - NOAA Climate Prediction Center (SST indices)
 
-**Computational Resources:**
-- [Institution] High-Performance Computing facility
-
-**Academic Advisors:**
-- Doctoral and post-doctoral supervisors (2009-2015)
-- Collaborators in numerical modeling and computational climate science
-
-**Repository Cleanup:**
-- October 2025 - Repository reorganization, documentation enhancement, and preparation for public release
-
 ---
 
 ## Version History
 
-**v1.0** (2015) - Original research codebase
-**v2.0** (October 2025) - Repository cleanup and documentation enhancement
-- Reduced from 136,750 to 1,655 files (98.8% reduction)
-- Reorganized into modular structure
-- Enhanced documentation for reproducibility
-- Prepared for public GitHub release
+- **v1.0** (2015) - Original research codebase
+- **v2.0** (October 2025) - Repository cleanup and documentation enhancement
+  - Reduced from 136,750 to 1,655 files (98.8% reduction)
+  - Reorganized into modular structure
+  - Enhanced documentation for reproducibility
+  - Prepared for public GitHub release
 
 ---
 
 **Last Updated:** October 3, 2025
-**Repository Status:** Active research archive (2009 -2015 methods)
+**Repository Status:** Active research archive (2009-2014 methods)
 **Maintenance:** Community-driven with original author oversight
